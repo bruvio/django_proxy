@@ -35,6 +35,7 @@ jobs:
               type=sha,format=long
               type=sha,format=long,prefix={{branch}}-
               type=raw,value=latest
+ 
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
@@ -44,7 +45,6 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      -
       - name: Build and export
         uses: docker/build-push-action@v2
         with:
